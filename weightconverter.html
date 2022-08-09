@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content ="width=device-width, initial-scale=1"
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="weightconverter.css" type="text/css">
+    <script src="weightconverter.js"></script>
+</head>
+<body style="background-color: #FFB728; padding: 30px; background-size: cover">
+    
+    <div class="converter-wrapper" style="margin: 0 auto; width: 100%; max-width: 1000px; text-align: center; padding: 20px; box-sizing: border-box" input="font-size: 50em; width: 100%; text-align: center; margin-top: 20px; height: 100px; box-sizing: border-box">
+    <h1 style="color: #54008A; font-family: MEMEFont; font-weight: 1000; font-size: 40px; text-align: center"><br>WEIGHT CONVERTER</h1> 
+    
+    
+    <form name="property_form">
+        <span>
+            <select class="select-property"
+               name="the_menu" size="1"
+   onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)">
+            </select>
+        </span>
+       </form>
+       
+       <div class="converter-side-a">
+           <form name="form_a" onSubmit="return false">
+               <input type="text" class="numbersonly" name="unit_input" maxlength="15" value="1000" onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+               <span>
+                   <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)">
+                       
+                   </select>
+               </span>
+           </form>
+           </div> <!-- /converter-side-a -->
+           
+           <div class="converter-side-b">
+               <form name="form_B" onSubmit="return false">
+                   <input type="text" class="numbersonly" name="unit_input" maxlength="15" value="0" onKeyUp="CalculateUnit(document.form_B, document.form_A)">
+                   <span>
+                       <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)">
+                           
+                       </select>
+                   </span>
+               </form>
+           </div> <!-- /converter-side-b -->
+    </div> <!-- converter-wrapper -->
+    
